@@ -774,6 +774,7 @@ body {
     color: #00ffff;
     margin: 0.5rem 0 1rem;
 }
+
 /* Ajouter ces styles à votre fichier CSS */
 .sr-only {
     position: absolute;
@@ -818,4 +819,221 @@ body {
 
 .social-link i {
     font-size: 1.2rem;
+}
+
+/* Partners Section */
+.partners {
+    padding: 8rem 0;
+    background: var(--darker-bg);
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.partner-card {
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-cyan);
+}
+
+.partner-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    background: white;
+    padding: 10px;
+}
+
+.partner-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-cyan);
+}
+
+.partner-card p {
+    color: var(--text-gray);
+}
+
+/* Cart Styles */
+.nav-cart {
+    position: relative;
+}
+
+.cart-icon {
+    position: relative;
+    color: var(--text-white);
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.cart-icon:hover {
+    color: var(--primary-cyan);
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--primary-cyan);
+    color: var(--dark-bg);
+    font-size: 0.7rem;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 100vh;
+    background: var(--darker-bg);
+    border-left: 1px solid rgba(0, 255, 255, 0.1);
+    z-index: 1001;
+    padding: 1.5rem;
+    overflow-y: auto;
+    transition: right 0.3s ease;
+}
+
+.cart-sidebar.active {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    color: var(--text-white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.cart-item {
+    display: flex;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1rem;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-title {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.cart-item-price {
+    color: var(--primary-cyan);
+    font-weight: 700;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.quantity-btn {
+    background: rgba(0, 255, 255, 0.1);
+    border: none;
+    color: var(--text-white);
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.quantity-input {
+    width: 30px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    color: var(--text-white);
+    margin: 0 0.5rem;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    color: #ff4444;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.cart-total {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 1.5rem 0;
+    text-align: right;
+    color: var(--primary-cyan);
+}
+
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: none;
+}
+
+.cart-overlay.active {
+    display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .cart-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+}
+
+.empty-cart {
+    text-align: center;
+    color: var(--text-light-gray);
+    padding: 2rem;
+}
+
+.shop-content {
+    position: relative;
 }

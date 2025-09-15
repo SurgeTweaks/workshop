@@ -35,10 +35,16 @@
             <ul class="nav-menu">
                 <li><a href="#accueil" class="nav-link">Accueil</a></li>
                 <li><a href="#equipe" class="nav-link">Équipe</a></li>
-                <li><a href="#timeline" class="nav-link">Timeline</a></li>
+                <li><a href="#partenaires" class="nav-link">Partenaires</a></li>
                 <li><a href="#shop" class="nav-link">Shop</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <div class="nav-cart">
+                <a href="#cart" class="cart-icon" id="cartButton">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
             <div class="burger" aria-label="Menu mobile" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -151,38 +157,24 @@
         </div>
     </section>
 
-    <!-- Timeline Section -->
-    <section id="timeline" class="timeline">
+    <section id="partenaires" class="partners">
         <div class="container">
-            <h2 class="section-title">TIMELINE</h2>
-            <div class="timeline-container">
-                <div class="timeline-item">
-                    <div class="timeline-date">Mars 2025</div>
-                    <div class="timeline-content">
-                        <h3>Participation au Championship Series</h3>
-                        <p>Qualification pour les finales nationales</p>
-                    </div>
+            <h2 class="section-title">NOS PARTENAIRES</h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <img src="temu.png" alt="Partenaire 1" loading="lazy">
+                    <h3>Partenaire Officiel</h3>
+                    <p>Un partenaire INDISPENSABLE pour l'achat de notre matériel esport 100% français.</p>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">Février 2025</div>
-                    <div class="timeline-content">
-                        <h3>Victoire Tournament Winter</h3>
-                        <p>Premier place dans la compétition régionale</p>
-                    </div>
+                <div class="partner-card">
+                    <img src="partner2.png" alt="Partenaire 2" loading="lazy">
+                    <h3>Partenaire Technique</h3>
+                    <p>Description du partenaire et de sa collaboration avec Nemesis Esport.</p>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">Janvier 2025</div>
-                    <div class="timeline-content">
-                        <h3>Formation de l'équipe Nemesis</h3>
-                        <p>Création officielle de l'équipe professionnelle</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">Décembre 2024</div>
-                    <div class="timeline-content">
-                        <h3>Première compétition</h3>
-                        <p>Participation au tournoi local - 3ème place</p>
-                    </div>
+                <div class="partner-card">
+                    <img src="partner3.png" alt="Partenaire 3" loading="lazy">
+                    <h3>Partenaire Équipement</h3>
+                    <p>Description du partenaire et de sa collaboration avec Nemesis Esport.</p>
                 </div>
             </div>
         </div>
@@ -192,24 +184,41 @@
     <section id="shop" class="shop">
         <div class="container">
             <h2 class="section-title">SHOP</h2>
-            <div class="shop-grid">
-                <div class="shop-item">
-                    <img src="maillot.png" alt="Maillot Officiel Nemesis Esport" loading="lazy">
-                    <h3>Maillot Officiel</h3>
-                    <p class="price">49,99 €</p>
-                    <button class="btn btn-primary">Acheter</button>
+            <div class="shop-content">
+                <div class="shop-grid">
+                    <div class="shop-item">
+                        <img src="maillot.png" alt="Maillot Officiel Nemesis Esport" loading="lazy">
+                        <h3>Maillot Officiel</h3>
+                        <p class="price">49,99 €</p>
+                        <button class="btn btn-primary">Acheter</button>
+                    </div>
+                    <div class="shop-item">
+                        <img src="casquette.png" alt="Casquette Nemesis Esport" loading="lazy">
+                        <h3>Casquette Nemesis</h3>
+                        <p class="price">19,99 €</p>
+                        <button class="btn btn-primary">Acheter</button>
+                    </div>
+                    <div class="shop-item">
+                        <img src="hoodie.png" alt="Hoodie Nemesis Esport" loading="lazy">
+                        <h3>Hoodie Nemesis</h3>
+                        <p class="price">59,99 €</p>
+                        <button class="btn btn-primary">Acheter</button>
+                    </div>
                 </div>
-                <div class="shop-item">
-                    <img src="casquette.png" alt="Casquette Nemesis Esport" loading="lazy">
-                    <h3>Casquette Nemesis</h3>
-                    <p class="price">19,99 €</p>
-                    <button class="btn btn-primary">Acheter</button>
-                </div>
-                <div class="shop-item">
-                    <img src="hoodie.png" alt="Hoodie Nemesis Esport" loading="lazy">
-                    <h3>Hoodie Nemesis</h3>
-                    <p class="price">59,99 €</p>
-                    <button class="btn btn-primary">Acheter</button>
+
+                <!-- Panier flottant -->
+                <div class="cart-sidebar" id="cartSidebar">
+                    <div class="cart-header">
+                        <h3>Votre Panier</h3>
+                        <button class="close-cart" id="closeCart">&times;</button>
+                    </div>
+                    <div class="cart-items" id="cartItems">
+                        <!-- Les articles du panier seront ajoutés ici dynamiquement -->
+                    </div>
+                    <div class="cart-total">
+                        Total: <span id="cartTotal">0,00 €</span>
+                    </div>
+                    <button class="btn btn-primary" id="checkoutButton">Commander</button>
                 </div>
             </div>
         </div>
