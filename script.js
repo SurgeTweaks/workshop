@@ -240,8 +240,184 @@ function checkout() {
     }, 2000);
 }
 
-// Mettre à jour pour inclure le lien Partenaires
-// Smooth scrolling for navigation links
+// Variables pour le processus de paiement
+let checkoutModal, closeCheckout, checkoutForm, checkoutSteps;
+let currentStep = 1;
+
+// Initialiser le processus de paiement
+function initCheckout() {
+    checkoutModal = document.getElementById('checkoutModal');
+    closeCheckout = document.getElementById('closeCheckout');
+    checkoutForm = document.getElementById('checkoutForm');
+    checkoutSteps = document.querySelectorAll('.checkout-step');
+
+    // Événements pour la modale de paiement
+    if (closeCheckout) {
+        closeCheckout.addEventListener('click', closeCheckoutModal);
+    }
+
+    // Événements pour les étapes
+    document.querySelectorAll('.next-step').forEach(button => {
+        button.addEventListener('click', function () {
+            const nextStep = parseInt(this.getAttribute('data-next'));
+            goToStep(nextStep);
+        });
+    });
+
+    document.querySelectorAll('.prev-step').forEach(button => {
+        button.addEventListener('click', function () {
+            const prevStep = parseInt(this.getAttribute('data-prev'));
+            goToStep(prevStep);
+        });
+    });
+
+    // Changer l'affichage selon la méthode de paiement
+    document.querySelectorAll('input[name="payment"]').forEach(radio => {
+        radio.addEventListener('change', function () {
+            document.querySelectorAll('.payment-details').forEach(detail => {
+                detail.style.display = 'none';
+            });
+
+            if (this.value === 'card') {
+                document.getElementById('card-details').style.display = 'block';
+            } else if (this.value === 'paypal') {
+                document.getElementById('paypal-details').style.display = 'block';
+            }
+        });
+    });
+
+    // Soumission du formulaire
+    if (checkoutForm) {
+        checkoutForm.addEventListener('submit', processPayment);
+    }
+
+    // Fermeture après confirmation
+    const confirmationClose = document.getElementById('confirmation-close');
+    if (confirmationClose) {
+        confirmationClose.addEventListener('click', function () {
+            closeCheckoutModal();
+            // Réinitialiser le formulaire
+            checkoutForm.reset();
+            goToStep(1);
+        });
+    }
+}
+
+// Ouvrir la modale de paiement
+function openCheckoutModal() {
+    if (cart.length === 0) {
+        showNotification('Votre panier est vide', 'error');
+        return;
+    }
+
+    // Mettre à jour le récapitulatif
+    updateCheckoutSummary();
+
+    // Réinitialiser les étapes
+    goToStep(1);
+
+    // Afficher la modale
+    checkoutModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Fermer la modale de paiement
+function closeCheckoutModal() {
+    checkoutModal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Aller à une étape spécifique
+function goToStep(step) {
+    // Cacher toutes les étapes
+    checkoutSteps.forEach(s => {
+        s.style.display = 'none';
+    });
+
+    // Afficher l'étape demandée
+    document.getElementById(`step${step}`).style.display = 'block';
+
+    // Mettre à jour les indicateurs d'étape
+    document.querySelectorAll('.step').forEach(s => {
+        s.classList.remove('active');
+    });
+    document.querySelector(`.step[data-step="${step}"]`).classList.add('active');
+
+    currentStep = step;
+}
+
+// Mettre à jour le récapitulatif de commande
+function updateCheckoutSummary() {
+    const summaryContainer = document.getElementById('checkout-summary-items');
+    const totalElement = document.getElementById('checkout-total-amount');
+
+    if (!summaryContainer || !totalElement) return;
+
+    // Vider le contenu existant
+    summaryContainer.innerHTML = '';
+
+    // Ajouter les articles
+    cart.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.className = 'checkout-item';
+        itemElement.innerHTML = `
+            <span>${item.name} x${item.quantity}</span>
+            <span>${(item.price * item.quantity).toFixed(2)} €</span>
+        `;
+        summaryContainer.appendChild(itemElement);
+    });
+
+    // Calculer et afficher le total
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    totalElement.textContent = `${total.toFixed(2)} €`;
+}
+
+// Traiter le paiement
+function processPayment(e) {
+    e.preventDefault();
+
+    // Simuler le traitement du paiement
+    const submitBtn = checkoutForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+
+    submitBtn.textContent = 'Traitement en cours...';
+    submitBtn.disabled = true;
+
+    // Simuler un délai de traitement
+    setTimeout(() => {
+        // Générer un numéro de commande aléatoire
+        const orderNumber = 'NEM-' + Math.floor(100000 + Math.random() * 900000);
+
+        // Afficher l'étape de confirmation
+        goToStep(3);
+
+        // Remplir les informations de confirmation
+        document.getElementById('confirmation-email').textContent =
+            document.getElementById('checkout-email').value;
+        document.getElementById('order-number').textContent = orderNumber;
+
+        // Vider le panier
+        cart = [];
+        saveCart();
+        updateCartUI();
+
+        // Réactiver le bouton
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }, 2000);
+}
+
+// Modifier la fonction checkout existante
+function checkout() {
+    if (cart.length === 0) return;
+    openCheckoutModal();
+}
+
+// Initialiser le processus de paiement au chargement
+document.addEventListener('DOMContentLoaded', function () {
+    initCheckout();
+});
+
 function initSmoothScrolling() {
     const navLinks = document.querySelectorAll('.nav-link');
 

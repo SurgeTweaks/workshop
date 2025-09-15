@@ -169,7 +169,8 @@
                 <div class="partner-card">
                     <img src="montcuq.jpg" alt="Partenaire 2" loading="lazy">
                     <h3>Partenaire Logement</h3>
-                    <p>En accord avec la ville pour héberger nos joueurs afin de faire des bootcamps avant les compétitions.</p>
+                    <p>En accord avec la ville pour héberger nos joueurs afin de faire des bootcamps avant les
+                        compétitions.</p>
                 </div>
                 <div class="partner-card">
                     <img src="recyclage.png" alt="Partenaire 3" loading="lazy">
@@ -224,14 +225,124 @@
         </div>
     </section>
 
-    <div class="product-modal" id="productModal">
+    <!-- Ajoutez cette section modale pour le paiement après la section shop existante -->
+    <div class="checkout-modal" id="checkoutModal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <img src="" alt="" id="modalImage">
-            <h2 id="modalTitle"></h2>
-            <p id="modalDescription"></p>
-            <p class="price" id="modalPrice"></p>
-            <button class="btn btn-primary" id="modalAddToCart">Ajouter au panier</button>
+            <span class="close-modal" id="closeCheckout">&times;</span>
+            <h2>Finaliser votre commande</h2>
+
+            <div class="checkout-steps">
+                <div class="step active" data-step="1">Informations</div>
+                <div class="step" data-step="2">Paiement</div>
+                <div class="step" data-step="3">Confirmation</div>
+            </div>
+
+            <form id="checkoutForm">
+                <!-- Étape 1: Informations personnelles -->
+                <div class="checkout-step" id="step1">
+                    <h3>Informations personnelles</h3>
+                    <div class="form-group">
+                        <label for="checkout-name">Nom complet *</label>
+                        <input type="text" id="checkout-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout-email">Email *</label>
+                        <input type="email" id="checkout-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout-phone">Téléphone *</label>
+                        <input type="tel" id="checkout-phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout-address">Adresse *</label>
+                        <textarea id="checkout-address" name="address" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout-city">Ville *</label>
+                        <input type="text" id="checkout-city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout-zip">Code postal *</label>
+                        <input type="text" id="checkout-zip" name="zip" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout-country">Pays *</label>
+                        <select id="checkout-country" name="country" required>
+                            <option value="">Sélectionnez un pays</option>
+                            <option value="FR" selected>France</option>
+                            <option value="BE">Belgique</option>
+                            <option value="CH">Suisse</option>
+                            <option value="CA">Canada</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary next-step" data-next="2">Suivant</button>
+                </div>
+
+                <!-- Étape 2: Paiement -->
+                <div class="checkout-step" id="step2" style="display:none;">
+                    <h3>Méthode de paiement</h3>
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <input type="radio" id="payment-card" name="payment" value="card" checked>
+                            <label for="payment-card">Carte de crédit</label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" id="payment-paypal" name="payment" value="paypal">
+                            <label for="payment-paypal">PayPal</label>
+                        </div>
+                    </div>
+
+                    <div class="payment-details" id="card-details">
+                        <div class="form-group">
+                            <label for="card-number">Numéro de carte *</label>
+                            <input type="text" id="card-number" name="card_number" placeholder="1234 5678 9012 3456">
+                        </div>
+                        <div class="form-group-row">
+                            <div class="form-group">
+                                <label for="card-expiry">Date d'expiration *</label>
+                                <input type="text" id="card-expiry" name="card_expiry" placeholder="MM/AA">
+                            </div>
+                            <div class="form-group">
+                                <label for="card-cvc">CVC *</label>
+                                <input type="text" id="card-cvc" name="card_cvc" placeholder="123">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-name">Nom sur la carte *</label>
+                            <input type="text" id="card-name" name="card_name">
+                        </div>
+                    </div>
+
+                    <div class="payment-details" id="paypal-details" style="display:none;">
+                        <p>Vous serez redirigé vers PayPal pour finaliser votre paiement.</p>
+                    </div>
+
+                    <div class="checkout-summary">
+                        <h4>Récapitulatif de commande</h4>
+                        <div id="checkout-summary-items"></div>
+                        <div class="checkout-total">
+                            <strong>Total: <span id="checkout-total-amount">0,00 €</span></strong>
+                        </div>
+                    </div>
+
+                    <div class="checkout-actions">
+                        <button type="button" class="btn btn-secondary prev-step" data-prev="1">Retour</button>
+                        <button type="submit" class="btn btn-primary">Payer maintenant</button>
+                    </div>
+                </div>
+
+                <!-- Étape 3: Confirmation -->
+                <div class="checkout-step" id="step3" style="display:none;">
+                    <div class="confirmation-message">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Commande confirmée!</h3>
+                        <p>Merci pour votre achat. Votre commande a été traitée avec succès.</p>
+                        <p>Un email de confirmation a été envoyé à <span id="confirmation-email"></span>.</p>
+                        <p class="order-number">Numéro de commande: <strong id="order-number"></strong></p>
+                        <button type="button" class="btn btn-primary" id="confirmation-close">Fermer</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 
