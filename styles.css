@@ -1334,3 +1334,16 @@ body {
 .btn.is-loading .loading-text {
     display: inline;
 }
+
+.floating-logo {
+    animation: float 6s ease-in-out infinite, rotate3d 15s linear infinite;
+}
+
+@keyframes rotate3d {
+    0% {
+        transform: rotate3d(0, 1, 0, 0deg);
+    }
+    100% {
+        transform: rotate3d(0, 1, 0, 360deg);
+    }
+}
