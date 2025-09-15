@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Damien Morellon - Nemesis Esport</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html"><img src="logo.png" alt="Nemesis"></a>
+        <span class="nav-title">NEMESIS ESPORT</span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="player-profile">
+    <div class="container">
+      <a href="index.html#equipe" class="btn btn-secondary back-btn"><i class="fas fa-arrow-left"></i> Retour à l'équipe</a>
+      
+      <h1 class="section-title">Damien Morellon</h1>
+      
+      <div class="player-content">
+        <div class="player-image-container">
+          <img src="pp-damien.jpg" alt="Damien Morellon" class="player-photo">
+          <div class="player-status">
+            <span class="status-dot"></span>
+            <span class="status-text">Pentester en devenir</span>
+          </div>
+        </div>
+        
+        <div class="player-bio">
+          <h2 class="player-role">Spécialiste Cybersécurité</h2>
+          
+          <div class="bio-section">
+            <h3><i class="fas fa-graduation-cap"></i> Parcours Académique</h3>
+            <p>J'ai obtenu un bac général qui m'a offert une base solide pour poursuivre mes ambitions dans le domaine de la cybersécurité.</p>
+          </div>
+          
+          <div class="bio-section">
+            <h3><i class="fas fa-heart"></i> Passions</h3>
+            <div class="passions-container">
+              <div class="passion-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>Cybersécurité</span>
+              </div>
+              <div class="passion-item">
+                <i class="fas fa-fist-raised"></i>
+                <span>JoJo's Bizarre Adventure</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bio-section">
+            <h3><i class="fas fa-bullseye"></i> Ambition</h3>
+            <p>Mon objectif est de décrocher un master en cybersécurité pour devenir pentester (testeur d'intrusion) et contribuer à la sécurité des systèmes informatiques.</p>
+          </div>
+          
+          <div class="bio-section">
+            <h3><i class="fas fa-surprise"></i> Anecdote</h3>
+            <div class="anecdote-card">
+              <i class="fas fa-volleyball-ball"></i>
+              <p>"Je me suis fait une déchirure de ligament + 3 points de suture au menton en jouant au badminton en étant ivre"</p>
+            </div>
+          </div>
+          
+          <div class="player-stats">
+            <div class="stat-card">
+              <div class="stat-value">Bac</div>
+              <div class="stat-label">Général</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">JoJo's Bizarre Adventure</div>
+              <div class="stat-label">Passion</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">Pentester</div>
+              <div class="stat-label">Objectif</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .player-profile {
+      padding: 8rem 0 4rem;
+      background: var(--darker-bg);
+      min-height: 100vh;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .player-content {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .player-image-container {
+      position: relative;
+    }
+
+    .player-photo {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: var(--shadow-purple);
+      transition: var(--transition);
+    }
+
+    .player-photo:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-cyan);
+    }
+
+    .player-status {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      background: rgba(10, 10, 10, 0.8);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      backdrop-filter: blur(5px);
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--primary-cyan);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    .status-text {
+      color: var(--text-white);
+      font-weight: 500;
+    }
+
+    .player-bio {
+      color: var(--text-gray);
+    }
+
+    .player-role {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--primary-cyan);
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      text-shadow: var(--shadow-cyan);
+    }
+
+    .bio-section {
+      margin-bottom: 2rem;
+    }
+
+    .bio-section h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--text-white);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .bio-section p {
+      line-height: 1.6;
+    }
+
+    .passions-container {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .passion-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+      border: 1px solid rgba(0, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1rem;
+      transition: var(--transition);
+      min-width: 120px;
+    }
+
+    .passion-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-cyan);
+    }
+
+    .passion-item i {
+      font-size: 1.5rem;
+      color: var(--primary-cyan);
+      margin-bottom: 0.5rem;
+    }
+
+    .anecdote-card {
+      background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+      border: 1px solid rgba(0, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .anecdote-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-purple);
+    }
+
+    .anecdote-card i {
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: var(--primary-purple);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: white;
+      box-shadow: var(--shadow-purple);
+    }
+
+    .player-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .stat-card {
+      background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+      border: 1px solid rgba(0, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-cyan);
+    }
+
+    .stat-value {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-cyan);
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-light-gray);
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
+    @media (max-width: 900px) {
+      .player-content {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+      }
+      
+      .player-image-container {
+        max-width: 300px;
+      }
+      
+      .bio-section h3 {
+        justify-content: center;
+      }
+      
+      .player-stats {
+        grid-template-columns: 1fr;
+      }
+      
+      .passions-container {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .player-profile {
+        padding: 6rem 0 2rem;
+      }
+    }
+  </style>
+</body>
+</html>

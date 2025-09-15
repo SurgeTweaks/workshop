@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nemesis Esport - Équipe Pro Gaming</title>
+    <meta name="description"
+        content="Nemesis Esport - Équipe professionnelle de gaming française. Découvrez nos joueurs, résultats et boutique.">
+    <meta name="theme-color" content="#4B228D">
+    <meta property="og:title" content="Nemesis Esport - Équipe Pro Gaming">
+    <meta property="og:description" content="Équipe professionnelle de gaming française">
+    <meta property="og:image" content="https://votre-site.com/logo.png">
+    <meta property="og:url" content="https://votre-site.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        as="style" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"><img src="logo.png" alt="Nemesis Esport - Logo"></a>
+                <span class="nav-title">NEMESIS ESPORT</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                <li><a href="#equipe" class="nav-link">Équipe</a></li>
+                <li><a href="#timeline" class="nav-link">Timeline</a></li>
+                <li><a href="#shop" class="nav-link">Shop</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="burger" aria-label="Menu mobile" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="text-cyan">NEMESIS</span>
+                    <span class="text-purple">ESPORT</span>
+                </h1>
+                <p class="hero-subtitle">Équipe professionnelle de gaming française</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Joueurs Pro</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Tournois</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">2024</span>
+                        <span class="stat-label">Fondation</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#equipe" class="btn btn-primary">Voir l'équipe</a>
+                    <a href="#contact" class="btn btn-secondary">Nous suivre</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-logo">
+                    <img src="logo.png" alt="Nemesis Esport - Logo animé" class="hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="equipe" class="team">
+        <div class="container">
+            <h2 class="section-title">NOTRE ÉQUIPE</h2>
+            <div class="team-grid">
+                <div class="team-card" data-link="luka.html">
+                    <div class="team-image">
+                        <img src="pp-luka.jpg" alt="Luka Constant - Lead Developer" loading="lazy">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Luka Constant</h3>
+                        <p class="team-role">Lead Developer</p>
+                        <div class="team-skills">
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">PHP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card" data-link="evan.html">
+                    <div class="team-image">
+                        <img src="pp-evan.jpg" alt="Evan Vuattier - Designer" loading="lazy">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Evan Vuattier</h3>
+                        <p class="team-role">Designer</p>
+                        <div class="team-skills">
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">UI/UX</span>
+                            <span class="skill-tag">Photoshop</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card" data-link="damien.html">
+                    <div class="team-image">
+                        <img src="pp-damien.jpg" alt="Damien Morellon - Developer" loading="lazy">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Damien Morellon</h3>
+                        <p class="team-role">Developer</p>
+                        <div class="team-skills">
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card" data-link="axel.html">
+                    <div class="team-image">
+                        <img src="pp-axel.jpg" alt="Axel Navalon - Developer" loading="lazy">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Axel Navalon</h3>
+                        <p class="team-role">Developer</p>
+                        <div class="team-skills">
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline">
+        <div class="container">
+            <h2 class="section-title">TIMELINE</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-date">Mars 2025</div>
+                    <div class="timeline-content">
+                        <h3>Participation au Championship Series</h3>
+                        <p>Qualification pour les finales nationales</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Février 2025</div>
+                    <div class="timeline-content">
+                        <h3>Victoire Tournament Winter</h3>
+                        <p>Premier place dans la compétition régionale</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Janvier 2025</div>
+                    <div class="timeline-content">
+                        <h3>Formation de l'équipe Nemesis</h3>
+                        <p>Création officielle de l'équipe professionnelle</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Décembre 2024</div>
+                    <div class="timeline-content">
+                        <h3>Première compétition</h3>
+                        <p>Participation au tournoi local - 3ème place</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="shop">
+        <div class="container">
+            <h2 class="section-title">SHOP</h2>
+            <div class="shop-grid">
+                <div class="shop-item">
+                    <img src="maillot.png" alt="Maillot Officiel Nemesis Esport" loading="lazy">
+                    <h3>Maillot Officiel</h3>
+                    <p class="price">49,99 €</p>
+                    <button class="btn btn-primary">Acheter</button>
+                </div>
+                <div class="shop-item">
+                    <img src="casquette.png" alt="Casquette Nemesis Esport" loading="lazy">
+                    <h3>Casquette Nemesis</h3>
+                    <p class="price">19,99 €</p>
+                    <button class="btn btn-primary">Acheter</button>
+                </div>
+                <div class="shop-item">
+                    <img src="hoodie.png" alt="Hoodie Nemesis Esport" loading="lazy">
+                    <h3>Hoodie Nemesis</h3>
+                    <p class="price">59,99 €</p>
+                    <button class="btn btn-primary">Acheter</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">CONTACT</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Rejoignez notre communauté</h3>
+                    <p>Suivez-nous sur nos réseaux sociaux pour rester informés de nos actualités et performances.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/noahjls?igsh=OGdkMGdvOWo3dnB4" class="social-link discord"
+                            aria-label="Notre Instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/luka-constant-417981336/" class="social-link twitter"
+                            aria-label="Notre LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://steamcommunity.com/profiles/76561199190035964" class="social-link twitch"
+                            aria-label="Notre Steam">
+                            <i class="fab fa-steam"></i>
+                            <span>Steam</span>
+                        </a>
+                        <a href="#" class="social-link youtube" aria-label="Notre YouTube">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nom complet *</label>
+                            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Adresse email *</label>
+                            <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Sujet *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Sélectionnez un sujet</option>
+                                <option value="sponsorship">Partenariat/Sponsorship</option>
+                                <option value="recruitment">Recrutement</option>
+                                <option value="general">Question générale</option>
+                                <option value="technical">Problème technique</option>
+                                <option value="other">Autre</option>
+                            </select>
+                            <span class="error-message" id="subjectError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" placeholder="Votre message" rows="5"
+                                required></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <span class="submit-text">Envoyer</span>
+                            <span class="loading-text">Envoi en cours...</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo-big.png" alt="Nemesis Esport" loading="lazy">
+                    <span>NEMESIS ESPORT</span>
+                </div>
+                <p>&copy; 2025 Nemesis Esport. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
